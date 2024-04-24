@@ -6,7 +6,7 @@
 /*   By: achakour <achakour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 09:40:55 by achakour          #+#    #+#             */
-/*   Updated: 2024/04/24 09:56:43 by achakour         ###   ########.fr       */
+/*   Updated: 2024/04/24 12:42:03 by achakour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,15 @@ void    ft_send_signals(int pid, unsigned char c)
     static unsigned char   ch;
     static int             i;
 
-    i = 8;
+    i = 7;
     while (i--)
     {
         ch = c >> i;
-        if (ch == 0)
+        if ((ch & 0x01) == 0)
             kill(pid, SIGUSR1);
         else
             kill(pid, SIGUSR2);
+        usleep(42);
     }
 }
 
