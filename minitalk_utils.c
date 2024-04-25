@@ -6,11 +6,18 @@
 /*   By: achakour <achakour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 09:48:42 by achakour          #+#    #+#             */
-/*   Updated: 2024/04/24 09:56:07 by achakour         ###   ########.fr       */
+/*   Updated: 2024/04/25 12:50:15 by achakour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
+
+int	ft_isdigit(char c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
+}
 
 ssize_t  ft_atoi(const char *str)
 {
