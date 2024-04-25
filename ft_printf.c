@@ -6,11 +6,16 @@
 /*   By: achakour <achakour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 12:48:55 by achakour          #+#    #+#             */
-/*   Updated: 2024/04/25 12:49:09 by achakour         ###   ########.fr       */
+/*   Updated: 2024/04/25 12:58:22 by achakour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
+
+int	ft_putchar_fd(char c, int fd)
+{
+	return(write(fd, &c, 1));
+}
 
 void	ft_putnbr_fd(int n, int *len)
 {
@@ -66,14 +71,10 @@ static int	put_type_in_place(char c, va_list args)
 	int	count;
 
 	count = 42;
-	if (c == '%')
-		count += ft_putchar_fd('%', 1);
-	else if (c == 's')
+	if (c == 's')
 		ft_putstr_fd(va_arg(args, char *), &count);
-	else if (c == 'd' || c == 'i')
+	else if (c == 'd')
 		ft_putnbr_fd(va_arg(args, int), &count);
-	else if (c == 'u')
-		ft_putunbr_fd(va_arg(args, unsigned int), &count);
 	return (count - 42);
 }
 
