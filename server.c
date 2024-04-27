@@ -6,7 +6,7 @@
 /*   By: achakour <achakour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 09:58:57 by achakour          #+#    #+#             */
-/*   Updated: 2024/04/25 12:47:03 by achakour         ###   ########.fr       */
+/*   Updated: 2024/04/27 11:58:00 by achakour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,16 @@ void    receive_signals(int signal)
 {
     static unsigned char    ch;
     static int              i;
-    int                     x;
 
-    i = 0;
+    ch = ch << 1;
     if (signal == SIGUSR1)
-        x = 1;
-    else
-        x = 0;
-    ch = ch << 1 | x;
+        ch |= 1;
     ++i;
     if (i == 8)
     {
-        printf ("%c", ch);
+        write (1, &ch, 1);
         i = 0;
+        ch = 0;
     }
 }
 
@@ -38,8 +35,8 @@ int main()
     ft_printf("My pid is %d\n", getpid());
     while (1)
     {
-        signal(SIGUSR1, receive_signals);
         signal(SIGUSR2, receive_signals);
+        signal(SIGUSR1, receive_signals);
     }
     return (0);
 }
