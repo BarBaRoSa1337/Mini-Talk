@@ -6,7 +6,7 @@
 /*   By: achakour <achakour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 09:39:19 by achakour          #+#    #+#             */
-/*   Updated: 2024/04/25 12:49:58 by achakour         ###   ########.fr       */
+/*   Updated: 2024/04/27 15:18:11 by achakour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,5 @@
 #include <signal.h>
 
 int         ft_printf(const char *format, ...);
-ssize_t     ft_atoi(const char *str);
-int         is_valid_pid(int pid);
 
 #endif

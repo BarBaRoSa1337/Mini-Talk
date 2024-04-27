@@ -6,7 +6,7 @@
 /*   By: achakour <achakour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 09:58:57 by achakour          #+#    #+#             */
-/*   Updated: 2024/04/27 11:58:00 by achakour         ###   ########.fr       */
+/*   Updated: 2024/04/27 15:17:46 by achakour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void    receive_signals(int signal)
 {
     static unsigned char    ch;
-    static int              i;
+    static int              i; 
 
     ch = ch << 1;
     if (signal == SIGUSR1)
