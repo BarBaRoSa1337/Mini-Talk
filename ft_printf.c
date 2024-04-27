@@ -6,7 +6,7 @@
 /*   By: achakour <achakour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 12:48:55 by achakour          #+#    #+#             */
-/*   Updated: 2024/04/25 12:58:22 by achakour         ###   ########.fr       */
+/*   Updated: 2024/04/27 13:32:02 by achakour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_putchar_fd(char c, int fd)
 {
-	return(write(fd, &c, 1));
+	return (write(fd, &c, 1));
 }
 
 void	ft_putnbr_fd(int n, int *len)
@@ -50,7 +50,7 @@ void	ft_putstr_fd(const char *s, int *len)
 		*len += write(1, &s[i], 1);
 }
 
-static int check(char c)
+static int	check(char c)
 {
 	char	*set;
 	int		i;
