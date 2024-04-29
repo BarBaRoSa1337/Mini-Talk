@@ -6,28 +6,26 @@
 /*   By: achakour <achakour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 09:40:55 by achakour          #+#    #+#             */
-/*   Updated: 2024/04/27 13:31:56 by achakour         ###   ########.fr       */
+/*   Updated: 2024/04/29 11:57:35 by achakour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-int	ft_isdigit(char c)
+int	ft_putchar_fd(char c, int fd)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	return (write(fd, &c, 1));
 }
 
 ssize_t	ft_atoi(const char *str)
 {
-	ssize_t	num;
 	size_t	sign;
+	ssize_t	num;
 	int		i;
 
+	i = 0;
 	num = 0;
 	sign = 1;
-	i = 0;
 	while (str[i] == '\f' || str[i] == '\t' || str[i] == '\r' || str[i] == '\n'
 		|| str[i] == ' ' || str[i] == '\v')
 	{
@@ -39,7 +37,7 @@ ssize_t	ft_atoi(const char *str)
 			sign = -1;
 		++i;
 	}
-	while (ft_isdigit(str[i]) && str[i] != '\0')
+	while ((str[i] >= '0' && str[i] <= '9') && str[i] != '\0')
 	{
 		num = num * 10 + str[i] - '0';
 		++i;

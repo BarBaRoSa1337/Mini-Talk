@@ -6,11 +6,16 @@
 /*   By: achakour <achakour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 09:58:57 by achakour          #+#    #+#             */
-/*   Updated: 2024/04/27 13:33:23 by achakour         ###   ########.fr       */
+/*   Updated: 2024/04/29 11:48:28 by achakour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
+
+int	ft_putchar_fd(char c, int fd)
+{
+	return (write(fd, &c, 1));
+}
 
 void	receive_signals(int signal)
 {

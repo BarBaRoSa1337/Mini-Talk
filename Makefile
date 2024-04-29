@@ -6,11 +6,11 @@
 #    By: achakour <achakour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/25 12:48:40 by achakour          #+#    #+#              #
-#    Updated: 2024/04/27 15:18:31 by achakour         ###   ########.fr        #
+#    Updated: 2024/04/29 11:49:41 by achakour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SERVER_S= ft_printf.c server.c 
+SERVER_S= server.c ft_printf.c
 CLIENT_S= client.c ft_printf.c
 
 SERVER_O=$(SERVER_S:.c=.o)
@@ -18,7 +18,7 @@ CLIENT_O=$(CLIENT_S:.c=.o)
 
 CFLAGS= -Wall -Wextra -Werror
 SERVER = server
-CLIENT = client 
+CLIENT = client
 RM = rm -rf
 CC = cc
 
